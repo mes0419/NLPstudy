@@ -3,7 +3,7 @@
 This repo contains a neural network language modeling toolkit. Currently, it just provides a RNNLM with a small number of figures. Please, feel free to contribute to improve this repo.
 
 ## Usage:
-
+python train.py -model ./models/model.pth -train ./data/TED2013.de-en.en.train.txt -valid ./data/TED2013.de-en.en.valid.txt
 ```
 $ python train.py
 usage: train.py [-h] -model MODEL -train TRAIN -valid VALID [-gpu_id GPU_ID]
