@@ -18,7 +18,7 @@ if you want to use BERT finetuning, you may also need,
 - Huggingface
 
 ## Usage
-
+python train.py --model_fn ./models/model.pth --train_fn ./data/raw_corpus.txt  --rnn --cnn
 ### Preparation
 
 #### Format
