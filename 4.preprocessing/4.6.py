@@ -2,6 +2,7 @@
 #4.6.3 CTK을 활용한 정렬
 #MUSE 설치
 #https://github.com/LowResourceLanguages/champollion
+#해당 파트는 병렬 코퍼스 사전이 필요 해서 실행 skip
 
 import sys, argparse, os
 

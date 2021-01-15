@@ -8,7 +8,7 @@
 from eunjeon import Mecab
 m = Mecab()
 print(m.pos("안녕하세요, 반갑습니다"))
-print(m.("안녕하세요, 반갑습니다")) #형태소 분리 <- wakati
+print(m.morphs("안녕하세요, 반갑습니다")) #형태소 분리 <- wakati
 print(m.nouns("안녕하세요, 반갑습니다")) #명사 분리
 
 '''morphs

@@ -10,8 +10,13 @@ Transformer, BERT 들도 서브워드 분절 방식
  pip install sentencepiece
  '''
 
-import sentencepiece as spm
 '''
+['▁자연', '어', '▁처', '리는', '▁인', '공', '지', '능', '의', '▁한', '▁줄', '기', '▁입니다']
+▁ <--- bpe 적용에 따른 분리랑 구분 짓기 위해 원래 띄어쓰기는 ▁를 사용한다. _ 랑 다른 특수문자 
+'''
+
+import sentencepiece as spm
+
 input_file = 'ratings_train.txt'
 vocab_size = 5000
 model_name = 'bpe_test'
@@ -21,12 +26,9 @@ user_defined_symbols = '[PAD],[UNK],[CLS],[SEP],[MASK],[UNK1],[UNK2],[UNK3],[UNK
 input_argument = '--input=%s --model_prefix=%s --vocab_size=%s --user_defined_symbols=%s --model_type=%s'
 cmd = input_argument%(input_file, model_name, vocab_size,user_defined_symbols, model_type)
 spm.SentencePieceTrainer.Train(cmd)
-'''
+
 
 sp = spm.SentencePieceProcessor()
 sp.Load("bpe_test.model")
 print(sp.EncodeAsPieces("자연어 처리는 인공지능의 한 줄기 입니다"))
-'''
-['▁자연', '어', '▁처', '리는', '▁인', '공', '지', '능', '의', '▁한', '▁줄', '기', '▁입니다']
-▁ <--- bpe 적용에 따른 분리랑 구분 짓기 위해 원래 띄어쓰기는 ▁를 사용한다. _ 랑 다른 특수문자 
-'''
+
